@@ -1,0 +1,36 @@
+.slide-image {
+  @apply absolute w-full h-full backdrop-blur-2xl flex justify-center items-center z-10;
+}
+
+.slide-container {
+  @apply absolute;
+
+  top: 5vh;
+
+  width: 80vw;
+  height: 80vh;
+}
+
+.slide-container img {
+  height: auto;
+  width: auto !important;
+  margin: auto;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.close-button {
+  @apply absolute top-4 right-4 transition-all;
+}
+
+.close-button:hover {
+  @apply text-red-700;
+}
+
+.react-slideshow-container .nav:last-of-type {
+  right: -40px;
+}
+
+.react-slideshow-container .nav:first-of-type {
+  left: -40px;
+}

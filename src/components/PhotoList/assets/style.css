@@ -1,0 +1,23 @@
+.photo-list {
+  @apply columns-1 p-4 max-w-7xl m-auto;
+}
+
+.photo-list img {
+  @apply rounded-lg mb-4 transition-all;
+}
+
+.photo-list img:hover {
+  @apply cursor-pointer brightness-125;
+}
+
+@media screen and (min-width: 640px) {
+  .photo-list {
+    @apply columns-2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .photo-list {
+    @apply columns-3;
+  }
+}
