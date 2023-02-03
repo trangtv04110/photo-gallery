@@ -50,7 +50,7 @@ export default function SlideImage({ images, onClose, defaultIndex }) {
   return (
     <div className="slide-image" style={{ top: window.scrollY }}>
       <div className="slide-container">
-        <Fade defaultIndex={defaultIndex} ref={slideRef}>
+        <Fade defaultIndex={defaultIndex} ref={slideRef} autoplay={false}>
           {images &&
             images.map((image, index) => (
               <div key={index}>
