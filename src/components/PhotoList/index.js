@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Gallery from "react-photo-gallery";
+
 import { UNSPLASH_API } from "../../constants";
 import usePageBottom from "../../hooks/usePageBottom";
 
@@ -59,15 +61,20 @@ export default function PhotoList() {
   return (
     <div>
       <div className="photo-list">
-        {photos &&
-          photos.map((photo, i) => (
-            <img
-              key={i}
-              src={photo.urls.regular}
-              alt={photo.id}
-              onClick={() => handleShowSlideImage(i)}
-            />
-          ))}
+        {photos && photos.length && (
+          <Gallery
+            photos={photos.map((photo) => ({
+              src: photo.urls.regular,
+              width: photo.width,
+              height: photo.height,
+            }))}
+            direction={"column"}
+            margin="8"
+            onClick={(a, { index }) => {
+              handleShowSlideImage(index);
+            }}
+          />
+        )}
       </div>
 
       {loading && <Loading />}
